@@ -3,6 +3,8 @@
 ////////////////////////////////////////////////
 'use strict';
 
+playToFive();
+
 function getInput() {
     console.log("Please choose either 'rock', 'paper', or 'scissors'.")
     return prompt();
@@ -34,6 +36,7 @@ function getComputerMove(move) {
     // However, if `move` is not specified / is null, your expression should equal `randomPlay()`.
    return (move || randomPlay());
 }
+
 function getWinner(playerMove,computerMove) {
 
     var winner;
@@ -61,8 +64,28 @@ function playToFive() {
     console.log("Let's play Rock, Paper, Scissors");
     var playerWins = 0;
     var computerWins = 0;
-    // Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
-    /* YOUR CODE HERE */
-    return [playerWins, computerWins];
-}
+    var playerMove;
+    var computerMove;
+    var winner;
 
+   while ((playerWins<5)&&(computerWins<5)) {
+
+    playerMove=getPlayerMove();
+    console.log('Player move is '+playerMove);
+
+    computerMove=getComputerMove();
+    console.log('Computer move is '+computerMove);
+
+    winner=getWinner(playerMove,computerMove);
+    console.log('The winner is '+ winner);
+
+    if (winner=='player') {
+        playerWins+=1;
+    }
+
+    else if (winner=='computer') {
+        computerWins+=1;
+    }
+    console.log('The score is '+ playerWins+' to the player and '+computerWins+' to the computer')
+    }
+   }
