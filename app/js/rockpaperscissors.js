@@ -6,7 +6,7 @@
 playToFive();
 
 function getInput() {
-    console.log("Please choose either 'rock', 'paper', or 'scissors'.")
+    console.log("Please choose either 'rock', 'paper', or 'scissors':")
     return prompt();
 }
 function randomPlay() {
@@ -93,6 +93,15 @@ function playToFive() {
         console.log('It\'s a tie');
     }
     
-    console.log('The score is '+ playerWins+' to the player and '+computerWins+' to the computer')
+    console.log('The score is '+ playerWins+' to the player and '+computerWins+' to the computer');
+    console.log('=================================');
     }
+    console.log('GAME OVER');
+    if(playerWins>=computerWins) {
+        console.log('PLAYER WON');
+    }
+    else {
+        console.log('COMPUTER WON');
+    }
+    
    }
