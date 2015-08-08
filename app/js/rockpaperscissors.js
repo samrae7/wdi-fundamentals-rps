@@ -71,21 +71,28 @@ function playToFive() {
    while ((playerWins<5)&&(computerWins<5)) {
 
     playerMove=getPlayerMove();
-    console.log('Player move is '+playerMove);
+    console.log('Player chooses '+playerMove);
 
     computerMove=getComputerMove();
-    console.log('Computer move is '+computerMove);
+    console.log('Computer chooses '+computerMove);
 
     winner=getWinner(playerMove,computerMove);
-    console.log('The winner is '+ winner);
+    
 
     if (winner=='player') {
         playerWins+=1;
+        console.log('Player wins');
     }
 
     else if (winner=='computer') {
         computerWins+=1;
+        console.log('Computer wins');
     }
+    
+    else {
+        console.log('It\'s a tie');
+    }
+    
     console.log('The score is '+ playerWins+' to the player and '+computerWins+' to the computer')
     }
    }
